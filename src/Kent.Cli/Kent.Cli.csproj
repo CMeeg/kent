@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{187D851B-9AEC-4B45-B1EB-027BE6C5BAD8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Kent.Cli</RootNamespace>
+    <AssemblyName>kent</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CMS.AspNet.Platform">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.AspNet.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Base, Version=12.0.0.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.ContinuousIntegration">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.ContinuousIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Core, Version=12.0.0.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.DataEngine, Version=12.0.0.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\vendor\Kentico\bin\CMS.DataEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.DeviceProfiles">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.DeviceProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.DocumentEngine">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.DocumentEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.EventLog">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.EventLog.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.FormEngine">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.FormEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Globalization">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.HealthMonitoring">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.HealthMonitoring.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Helpers, Version=12.0.0.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.ImportExport, Version=12.0.0.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\vendor\Kentico\bin\CMS.ImportExport.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.IO, Version=12.0.0.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\vendor\Kentico\bin\CMS.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.LicenseProvider">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.LicenseProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.MacroEngine">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.MacroEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Membership">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Membership.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Modules, Version=12.0.0.0, Culture=neutral, PublicKeyToken=834b12a258f213f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.PortalEngine">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.PortalEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Routing.Web">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Routing.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Scheduler">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Search">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Search.Azure">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Search.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.SiteProvider">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.SiteProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Synchronization">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Synchronization.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.Taxonomy">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.Taxonomy.dll</HintPath>
+    </Reference>
+    <Reference Include="CMS.WebFarmSync">
+      <HintPath>..\..\vendor\Kentico\bin\CMS.WebFarmSync.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CmsInitialiser.cs" />
+    <Compile Include="Configuration\KentSecretsConfigBuilder.cs" />
+    <Compile Include="Configuration\KentPropsConfigBuilder.cs" />
+    <Compile Include="Configuration\SettingsCollection.cs" />
+    <Compile Include="Configuration\UserSecretsLoader.cs" />
+    <Compile Include="ExportArgs.cs" />
+    <Compile Include="KentActions.cs" />
+    <Compile Include="Configuration\PropsLoader.cs" />
+    <Compile Include="Modules\CmsModuleSettings.cs" />
+    <Compile Include="Modules\ModuleDataProvider.cs" />
+    <Compile Include="Modules\ModuleExportPackageBuilder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor">
+      <Version>4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Meeg.Configuration">
+      <Version>0.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Configuration.ConfigurationBuilders.Base">
+      <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Mono.Cecil">
+      <Version>0.11.1</Version>
+    </PackageReference>
+    <PackageReference Include="PowerArgs">
+      <Version>3.6.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
