@@ -66,8 +66,6 @@ namespace Kent.Cli.Modules
 
             ExportProvider.DeleteTemporaryFiles(exportSettings, true);
 
-            SaveInstallationMetaData(exportSettings);
-
             return Result.Create(module, exportSettings);
         }
 
@@ -173,24 +171,6 @@ namespace Kent.Cli.Modules
                     (string)obj[codeNameColumn],
                     false
                 ));
-            }
-        }
-
-        private void SaveInstallationMetaData(SiteExportSettings exportSettings)
-        {
-            var metaData = new ModuleInstallationMetaData
-            {
-                Name = module.ResourceName,
-                Version = Version
-            };
-
-            string targetFolderPath = exportSettings.TargetPath;
-            string targetFilePath = Path.Combine(targetFolderPath, MetaDataFileName);
-
-            using (var fileStream = FileStream.New(targetFilePath, FileMode.Create, FileAccess.Write))
-            {
-                new XmlSerializer(typeof(ModuleInstallationMetaData))
-                    .Serialize(fileStream, metaData);
             }
         }
     }
