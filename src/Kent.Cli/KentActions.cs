@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.IO;
 using PowerArgs;
 using Kent.Cli.Modules;
 using Meeg.Configuration;
@@ -39,7 +40,7 @@ namespace Kent.Cli
 
             var result = new ModuleExportPackageBuilder(moduleSettings)
                 .WithVersion(args.Version)
-                .Build();
+                .Build(args.OutputDirectory);
 
             Console.WriteLine($"Successfully exported module `{result.ModuleName}` version `{result.Version}` to `{result.Path}`.");
         }

@@ -48,11 +48,11 @@ namespace Kent.Cli.Modules
             return this;
         }
 
-        public Result Build()
+        public Result Build(string targetPath)
         {
             ValidateBuild();
 
-            SiteExportSettings exportSettings = CreateNewSettings();
+            SiteExportSettings exportSettings = CreateNewSettings(targetPath);
 
             EnsureFolders(exportSettings);
 
@@ -101,16 +101,16 @@ namespace Kent.Cli.Modules
             }
         }
 
-        private SiteExportSettings CreateNewSettings()
+        private SiteExportSettings CreateNewSettings(string targetPath)
         {
-            string targetFolderPath = $"Package\\{Version}";
-            string tempFolderPath = $"{targetFolderPath}\\_temp\\{Guid.NewGuid()}";
+            string targetFolderPath = GetFullPath(targetPath);
+            string tempFolderPath = GetFullPath(Path.Combine(targetFolderPath, "_temp", Guid.NewGuid().ToString()));
 
             var siteExportSettings = new SiteExportSettings(user)
             {
-                TargetPath = ResolveModulePath(targetFolderPath),
+                TargetPath = targetFolderPath,
                 TargetFileName = ExportFileName,
-                TemporaryFilesPath = ResolveModulePath(tempFolderPath),
+                TemporaryFilesPath = tempFolderPath,
                 WebsitePath = SystemContext.WebApplicationPhysicalPath
             };
 
@@ -131,11 +131,9 @@ namespace Kent.Cli.Modules
             return siteExportSettings;
         }
 
-        private string ResolveModulePath(string path)
+        private string GetFullPath(string path)
         {
-            string modulePath = Path.Combine(settings.CmsModulePath, DirectoryHelper.EnsurePathBackSlash(path));
-
-            return Path.GetFullPath(modulePath);
+            return Path.GetFullPath(DirectoryHelper.EnsurePathBackSlash(path));
         }
 
         private void EnsureFolders(SiteExportSettings exportSettings)
