@@ -6,8 +6,8 @@ using CMS.Core;
 using CMS.DataEngine;
 using CMS.Helpers;
 using CMS.IO;
+using CMS.Membership;
 using CMS.Modules;
-using Mono.Cecil;
 
 namespace Kent.Cli.Modules
 {
@@ -34,7 +34,7 @@ namespace Kent.Cli.Modules
                 throw new InvalidOperationException($"Module '{settings.CmsModuleName}' does not exist.");
             }
 
-            user = CMSActionContext.CurrentUser;
+            user = UserInfoProvider.GetUserInfo("administrator") ?? CMSActionContext.CurrentUser;
 
             moduleDataProvider = new ModuleDataProvider(module);
         }
